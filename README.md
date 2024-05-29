@@ -24,3 +24,15 @@ https://cloud.mongodb.com/
 500MB
 ## Varios archivos en Nodejs
 https://nodejs.org/api/esm.html
+
+## Requisitos
+### Rutas
+
+- POST  `/api/users` 
+- Recibe un campo `username`
+- guarda en la coleccion `Users`
+
+:_id
+description
+duration
+date

@@ -42,6 +42,9 @@ app.get('/api/users', (req, res) => {
   // la lista de auaurios estara en forma de array con elementos {username, _id}
   res.json({ username: 'username', _id: '_id' });
 });
+
+
+
 /**
  * recibe el formulario con: descripción, duración y, opcionalmente, fecha. Si no se indica ninguna fecha, se utilizará la fecha actual.
  * {
