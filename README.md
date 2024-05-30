@@ -36,7 +36,8 @@ https://nodejs.org/api/esm.html
 - POST `/api/users`
   - Recibe un un formaulario con un campo `username`
   - guarda en la coleccion **Users**
-    - se crea un id autogenerado
+    - _id autogenerado
+    - username:string
   - muestra un json:
   ```json
   {
@@ -48,20 +49,41 @@ https://nodejs.org/api/esm.html
   - Retorna la lista de todos usuarios en forma de array
 - POST `/api/users/:_id/exercises` 
     - Recibe un formalario con los campos `description`, `duration`, `date`
-    - Guarda en la coleccion Exercices:
-        - 
+    - Guarda en la coleccion **Exercices**:
+        - _id autogenerado
+        - description: string
+        - duration: number
+        - date: Date, new Date("<YYYY-mm-dd>")
+        - _id usuario 
     - Muestra un JSON:
-```json
-  {
-  "_id": "6655b818f3f0350013ad1aba",
-  "username": "enriqueantonlopez",
-  "date": "Thu Mar 03 2985",
-  "duration": 43,
-  "description": "35243"
-  }
-```
-:_id
-description
-duration
-date
-```
+    ```json
+    {
+    "_id": "6655b818f3f0350013ad1aba",
+    "username": "enriqueanton",
+    "date": "Thu Mar 03 2985",
+    "duration": 43,
+    "description": "35243"
+    }
+    ```
+- GET `/api/users/:_id/logs`
+    - Retorna un JSON con los ejercicios de un usuario
+    -
+    ```json
+    {
+    "_id": "6655b818f3f0350013ad1aba",
+    "username": "enriqueanton",
+    "count": 2,
+    "log": [
+        {
+        "description": "mates",
+        "duration": 43,
+        "date": "Fri Feb 21 1986"
+        },
+        {
+        "description": "fisica",
+        "duration": 54,
+        "date": "Thu Feb 21 1985"
+        }
+    ]
+    }
+    ```
