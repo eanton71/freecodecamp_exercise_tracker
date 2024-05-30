@@ -60,11 +60,13 @@ https://nodejs.org/api/esm.html
     {
     "_id": "6655b818f3f0350013ad1aba",
     "username": "enriqueanton",
-    "date": "Thu Mar 03 2985",
+    "date": "Thu Mar 03 2985", 
     "duration": 43,
     "description": "35243"
     }
     ```
+    - Hay que busccar en la coleccion **Users** el **username**
+    - Hay que pasar el date a formato string `date.toDateString()` 
 - GET `/api/users/:_id/logs`
     - Retorna un JSON con los ejercicios de un usuario
     -
