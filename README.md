@@ -67,9 +67,9 @@ https://nodejs.org/api/esm.html
     ```
     - Hay que busccar en la coleccion **Users** el **username**
     - Hay que pasar el date a formato string `date.toDateString()` 
-- GET `/api/users/:_id/logs`
+- GET `/api/users/:_id/logs?[from][&to][&limit]`
     - Retorna un JSON con los ejercicios de un usuario
-    -
+    - buscamos todos los ejercicios que pertenezan al usuario con el id `req.params.id` 
     ```json
     {
     "_id": "6655b818f3f0350013ad1aba",
@@ -89,3 +89,11 @@ https://nodejs.org/api/esm.html
     ]
     }
     ```
+    - Se muestra un json con el id del usuario 
+    - username
+    - count: numero de  ejercicios
+    - "log": array con los  ejercicios donde no se muestran los id  
+    - Se puede filtrar de forma opcional con los parametros 
+        - from: desde una fecha hasta otra en formato yyyy-mm-dd 
+        - to:
+        - limit: cantidad e exercicios que se quieren mostrar
