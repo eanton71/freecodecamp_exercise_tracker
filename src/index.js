@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/views/index.html');
+  res.sendFile('index.html', { root: 'views' });
 });
 /**
  * recibe el formulario de usuario desde la vista con username e _id, crea un usuariop

@@ -5,8 +5,8 @@ let count = 0;
 
 const options = {
     autoIndex: false,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    //useNewUrlParser: true,
+    //useUnifiedTopology: true
 }
 
 const connectWithRetry = () => {
@@ -23,6 +23,5 @@ const connectWithRetry = () => {
         })
 }
 
-connectWithRetry();
-
+setTimeout(connectWithRetry, 2000);
 exports.mongoose = mongoose;
