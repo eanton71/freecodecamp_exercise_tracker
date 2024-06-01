@@ -97,3 +97,9 @@ https://nodejs.org/api/esm.html
         - from: desde una fecha hasta otra en formato yyyy-mm-dd 
         - to:
         - limit: cantidad e exercicios que se quieren mostrar
+        - los recogemos mediante `req.query`: En `/api/users/6655b818f3f0350013ad1aba/logs?from=1983-12-11&to=1986-12-11&limit=2` tenemos
+            - `req.params.id= 6655b818f3f0350013ad1aba`
+            - `req.query.from=1983-12-11`
+            - `req.query.to=1986-12-11`
+            - `req.query.limit=2`
+
