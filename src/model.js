@@ -28,14 +28,14 @@ async function createUser(username) {
         const user = new User({
             username
         });
-
+        console.log(`MongoDB creando usuario ${user}`)
         await user.save();
 
-        console.log(`User created: ${user.username}`);
+        console.log(`MongoDB Usuario creado, id:${user.id} nombre: ${user.username}`);
 
         return user;
     } catch (err) {
-        console.log('Error creating user');
+        console.log('MongoDB Error creando usuario');
         console.error(err);
         return null;
     }
@@ -59,14 +59,14 @@ async function createExercice(userId, description, duration, date) {
             date: new Date(date),
             usuario: userId
         });
-
+        console.log(`MongoDB crear ejercicio: ${exercice}`);
         await exercice.save();
 
-        console.log(`Exercice created for user ${userId}`);
+        console.log(`MongoDB Ejercicio creado por el usuario ${userId}`);
 
         return exercice;
     } catch (err) {
-        console.log('Error creating exercice');
+        console.log('MongoDB Error creando ejercicio');
         console.error(err);
         return null;
     }
@@ -87,6 +87,7 @@ if (exercice) {
 */
 
 async function getUsernameById(userId) {
+    console.log(`MongoDB buscando usuario con id: ${userId}`);
     try {
         const user = await User.findById(userId);
 
@@ -143,7 +144,7 @@ if (users.length > 0) {
 }
 */
 
-async function getExercisesByUserId(userId, startDate, endDate, limit) {
+async function getExercisesUserId(userId, startDate = undefined, endDate = undefined, limit = undefined) {
     try {
         const query = { usuario: userId };
 
@@ -239,5 +240,5 @@ module.exports = {
     createExercice,
     getUsernameById,
     getAllUsers,
-    getExercisesByUserId    //getTotalMinutesByUserId
+    getExercisesUserId    //getTotalMinutesByUserId
 };
