@@ -52,11 +52,17 @@ if (user) {
 }
  */
 async function createExercice(userId, description, duration, date) {
+    console.log(`MongoDB crear ejercicio DATE: ${date}`);
+ 
+    //(date == undefined) ? date = '' : date = date; // Si no se envia la fecha, se crea con la fecha actual
+   // const fecha = new Date();
+
+    //console.log(`MongoDB crear ejercicio FECHA: ${fecha}`);
     try {
         const exercice = new Exercice({
             description,
             duration,
-            date: new Date(date),
+            date: (date == undefined) ? new Date():new Date( date),
             usuario: userId
         });
         console.log(`MongoDB crear ejercicio: ${exercice}`);

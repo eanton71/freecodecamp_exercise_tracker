@@ -48,7 +48,7 @@ const postExercice = async (req, res) => {
     const userId = req.params._id;
     const exerciceName = req.body['description'];
     const duration = req.body['duration'];
-    const date = req.body['date'] || "";
+    const date = req.body['date'];
     const username = await getUsernameById(userId);
     console.log('username: ', username);
     //const { userId:, exerciceName: description , duration, date } = req.body;
@@ -92,30 +92,7 @@ const getExercicesByUserId = async (req, res) => {
     if (list) {
         // Hay ejercicios en la base de datos
         // Devolvemos la lista de ejercicios al cliente
-        /*
-{
-  "_id": "665b704df3f0350013ad1dd0",
-  "username": "eanton32",
-  "count": 1,
-  "log": [
-    {
-      "description": "35243",
-      "duration": 54,
-      "date": "Thu Feb 21 1985"
-    }
-  ]
-}
-
-        
-        const fields = [ 'description','duration', 'date'];
-
-        const newArray = list.map((obj) => {
-            return fields.reduce((acc, key) => {
-                acc[key] = obj[key];
-                return acc;
-            }, {});
-        });
-*/
+     
         const userExercices = {
             _id: userId,
             username: await getUsernameById(userId),
